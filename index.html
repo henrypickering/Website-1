@@ -3,75 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Henry Pickering - Portfolio</title>
+  <title>Henry Pickering</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      color: #222;
-      background-color: #f9f9f9;
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header {
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
       text-align: center;
-      margin-bottom: 2rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    a:hover {
+      border-color: #0066cc;
     }
     h1 {
-      margin-bottom: 0.3rem;
+      font-weight: 900;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.05em;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 1.2rem;
+      justify-content: center;
     }
     nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #007acc;
-    }
-    section {
-      margin-bottom: 2rem;
+      padding-bottom: 0.2rem;
     }
     footer {
-      text-align: center;
-      color: #666;
+      margin-top: auto;
+      padding-top: 3rem;
       font-size: 0.9rem;
-      border-top: 1px solid #ddd;
-      padding-top: 1rem;
+      color: #888;
     }
-    a.contact {
-      color: #007acc;
-      text-decoration: underline;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Henry Pickering</h1>
-    <p>Welcome to my portfolio website.</p>
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h2>Portfolio &amp; Contact</h2>
   </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
+  <section id="about" style="margin-top: 3rem; max-width: 600px; text-align: left;">
+    <h3>About Me</h3>
+    <p>Hello! I’m Henry, a passionate coder and finance enthusiast. I create projects to develop my skills and share insights. Welcome to my portfolio.</p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="projects" style="margin-top: 2rem; max-width: 600px; text-align: left;">
+    <h3>Projects</h3>
     <ul>
-      <li><strong>Project 1:</strong> Sample project description or link.</li>
-      <li><strong>Project 2:</strong> Another project you want to highlight.</li>
+      <li><strong>Project 1:</strong> Description or link to project.</li>
+      <li><strong>Project 2:</strong> Description or link to another project.</li>
     </ul>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me at <a class="contact" href="mailto:hello@henrypickering.com">hello@henrypickering.com</a> or connect with me on <a href="https://www.linkedin.com/in/henrypickering" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+  <section id="contact" style="margin-top: 2rem; max-width: 600px; text-align: left;">
+    <h3>Contact</h3>
+    <p>Email me at <a href="mailto:hello@henrypickering.com">hello@henrypickering.com</a></p>
+    <p>Connect on <a href="https://www.linkedin.com/in/henrypickering" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Henry Pickering. All rights reserved.</p>
+    &copy; 2025 Henry Pickering
   </footer>
 </body>
 </html>
-Add initial index.html
