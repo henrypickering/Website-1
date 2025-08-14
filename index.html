@@ -3,15 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Henry Pickering</title>
-  <meta name="description" content="Finance &amp; Commercial Law Student at Victoria University of Wellington">
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Finance & Commercial Law student at Victoria University of Wellington. Wellington, New Zealand — henrypickeringnz@gmail.com.">
+  <link rel="canonical" href="https://henrypickering.com/">
+
+  <!-- Open Graph (for rich previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Henry Pickering">
+  <meta property="og:title" content="Henry Pickering">
+  <meta property="og:description" content="Finance & Commercial Law student at Victoria University of Wellington.">
+  <meta property="og:url" content="https://henrypickering.com/">
+  <!-- Update or remove og:image if you don't have one yet -->
+  <meta property="og:image" content="https://henrypickering.com/og-card.png">
+  <meta property="og:image:alt" content="Henry Pickering — Finance & Commercial Law, VUW">
+  <meta property="og:locale" content="en_NZ">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Henry Pickering",
+    "email": "mailto:henrypickeringnz@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Wellington", "addressCountry": "NZ" },
+    "affiliation": "Victoria University of Wellington",
+    "sameAs": ["https://www.linkedin.com/in/henrypickeringnz/"],
+    "url": "https://henrypickering.com/"
+  }
+  </script>
+
   <style>
-    :root { --bg:#ffffff; --text:#0f172a; --muted:#94a3b8; }
+    :root{
+      --bg:#ffffff; --text:#0f172a; --muted:#94a3b8;
+      --accent:#0A66C2;               /* used for focus ring only */
+      --raise: clamp(24px, 6vh, 88px); /* optical raise of the block */
+    }
 
     * { box-sizing: border-box; }
     html, body { height: 100%; }
 
-    body {
+    body{
       margin: 0;
       background: var(--bg);
       color: var(--text);
@@ -21,50 +55,84 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
     }
 
     main { width: 100%; max-width: 760px; padding: 80px 20px; }
 
-    /* Left-aligned rows inside a centered stack */
-    .stack { width: fit-content; margin: 0 auto; display: grid; gap: 22px; justify-items: start; }
-    .row { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+    .stack{
+      width: fit-content;
+      margin: 0 auto;
+      display: grid;
+      gap: 22px;
+      justify-items: start;
+      transform: translateY(calc(-1 * var(--raise)));
+    }
 
-    .icon { width: 18px; height: 18px; display: block; opacity: .95; }
-    /* LinkedIn outline icon slightly larger for optical balance */
-    .icon-li { width: 20px; height: 20px; }
-    .icon-li * { stroke-width: 1.55; }
+    .row{
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: inherit;
+      text-decoration: none;
+      padding: 0;
+    }
 
-    .label { font-size: 15px; font-weight: 400; }
+    /* Icons: uniform size; slightly lighter so text leads */
+    .icon{ width: 20px; height: 20px; display: block; opacity: .85; transition: opacity .15s ease; }
+    .row:hover .icon { opacity: 1; }
+    .icon-li *{ stroke-width: 1.55; }
 
-    /* Links: inherit color; underline appears only on hover */
+    /* Text */
+    .label{ font-size: 15px; font-weight: 400; text-decoration-thickness: 1px; }
+    .label.name{ font-size: 15px; letter-spacing: 0; } /* same size as rest */
+
     a { color: inherit; text-decoration: none; }
     a:visited { color: inherit; }
-    a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    .fine { text-align: center; margin-top: 22px; }
-    .fine a { font-size: 13px; color: var(--muted); }
-    .fine a:hover { color: var(--text); }
+    /* Monochrome hover: underline only */
+    .row.link:hover .label,
+    a.row:hover .label { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+
+    /* Whole first row clickable; visible keyboard focus uses accent ring */
+    .row.link{ border-radius: 8px; cursor: pointer; }
+    .row.link:focus-visible,
+    a.row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; text-decoration: none; }
+
+    /* Bottom-fixed status link: softer gray; underline only on hover/focus (no color/opacity change) */
+    .fine{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 24px;
+      margin: 0;
+      text-align: center;
+      padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+    .fine a{ font-size: 13px; color: var(--muted); }
+    .fine a:hover,
+    .fine a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-height: 740px){
+      .stack { transform: none; }
+    }
   </style>
 </head>
 <body>
   <main>
     <div class="stack" aria-label="Contact">
-      <!-- LinkedIn outline icon on the left; name links to profile (not bold) -->
-      <div class="row">
+      <!-- Name row (icon + name clickable) -->
+      <a class="row link" href="https://www.linkedin.com/in/henrypickeringnz/" target="_blank" rel="noopener me"
+         aria-label="Henry Pickering on LinkedIn">
         <svg class="icon icon-li" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <!-- rounded square -->
           <rect x="3" y="3" width="18" height="18" rx="3" />
-          <!-- 'i' -->
           <circle cx="8" cy="7.4" r="0.9" />
           <line x1="8" y1="10.4" x2="8" y2="16" />
-          <!-- 'n' -->
           <path d="M12 16v-3.2c0-1.25 1.05-2.25 2.3-2.25s2.3 1 2.3 2.25V16" />
         </svg>
-        <a class="label" href="https://www.linkedin.com/in/henrypickeringnz/" target="_blank" rel="noopener">
-          Henry Pickering
-        </a>
-      </div>
+        <span class="label name">Henry Pickering</span>
+      </a>
 
       <!-- Role -->
       <div class="row">
@@ -95,11 +163,10 @@
         <span class="label">henrypickeringnz@gmail.com</span>
       </a>
     </div>
-
-    <div class="fine">
-      <a href="https://status.henrypickering.com/" target="_blank" rel="noopener">Service status</a>
-    </div>
   </main>
+
+  <div class="fine">
+    <a href="https://status.henrypickering.com/" target="_blank" rel="noopener" aria-label="Service status for henrypickering.com">Service status</a>
+  </div>
 </body>
 </html>
-
